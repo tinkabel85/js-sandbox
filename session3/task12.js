@@ -1,7 +1,7 @@
 // Create a function that takes in a number as an argument 
 //and returns the factorial of that number using recursion.
 
-let n = 5;
+let n = 10;
 
 function factorial(n) {
     if (n <= 1) {
