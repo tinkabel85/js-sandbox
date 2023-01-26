@@ -17,4 +17,4 @@ function isPangram(str) {
 
 }
 
-console.log(isPangram(str1));
+console.log(isPangram(str));

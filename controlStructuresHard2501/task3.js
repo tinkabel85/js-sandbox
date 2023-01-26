@@ -1,11 +1,10 @@
 // Task3
 // Write a program that removes all vowels from a given string.
 
-let str = "Some strIng with vowels";
+let str = "Some strIng with voeuwels";
 function removeVowels(str) {
-	for (let i = 0; i < str.length; i++) {
+	for (let i = str.length-1; i >=0; i--) {
 		str = str.toLowerCase();
-		console.log(str[i]);
 		if (
 			str[i] === "a" ||
 			str[i] === "e" ||
@@ -15,12 +14,9 @@ function removeVowels(str) {
 		) {
 			str = str.slice(0, i) + str.slice(i + 1);
 			//str = str.replace(str[i], '');
-			console.log(str);
+			// console.log(str);
 		}
 	}
 	return str;
 }
 console.log(removeVowels(str));
-
-// there is still some bug - in case we have a couple of vowels one after another (e.g. "Soeme"), 
-// the second one will not be removed, because the next iteration starts from the i+1 position
