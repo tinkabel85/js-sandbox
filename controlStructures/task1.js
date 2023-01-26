@@ -11,3 +11,7 @@ for (let i = 0; i < string.length; i++) {
 // for (let i = 0; i < string.length; i++) {
 //     console.log(string[i]);
 // }
+
+for (char in string) {
+	console.log(string char);
+}
