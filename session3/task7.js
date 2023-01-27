@@ -11,3 +11,15 @@ function sum(n) {
 
 let n = 10;
 console.log(`The sum of all the numbers of ${n} is ${sum(n)}.`);
+
+
+let number = '1233';
+
+function sum2(number) {
+	let result = 0;
+	for (let i = 0; i <= number.length -1; i++) {
+		result += +number.charAt(i);
+	}
+	return result;
+}
+console.log(sum2(number));
