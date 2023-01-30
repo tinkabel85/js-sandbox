@@ -26,6 +26,11 @@ function theLargest(array) {
 }
 console.log(`The largest number in the array is ${theLargest(array)}.`);
 
+function theLargestV2(array) {
+	return array.reduce((acc, curr) => Math.max(acc, curr));
+}
+
+console.log(`Second Version: The largest number in the array is ${theLargestV2(array)}.`);
 console.log(
 	"***********************************************************************"
 );
@@ -40,7 +45,13 @@ function theSmallest(array) {
 	}
 	return small;
 }
-console.log(`The largest number in the array is ${theSmallest(array)}.`);
+console.log(`The smallest number in the array is ${theSmallest(array)}.`);
+
+function theSmallestV2(array) {
+	return array.reduce((acc, curr) => Math.min(acc, curr));
+}
+console.log(`Second version: The smallest number in the array is ${theSmallestV2(array)}.`);
+
 console.log(
 	"***********************************************************************"
 );
@@ -102,6 +113,7 @@ function indexOfOccurence(array, number) {
 	let found = false;
 	let i;
 	for (i = 0; i < array.length && !found; i++) {
+		//console.log(array[i]);
 		found = number == array[i];
 	}
 	return found ? i - 1 : -1;

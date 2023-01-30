@@ -41,10 +41,7 @@ console.log("************************************************************");
 // and returns true if the value associated with that key is a function and false otherwise.
 
 function isKeyFunction(obj, key) {
-	if (typeof obj[key] == "function") {
-		return true;
-	}
-	return false;
+	return typeof obj[key] === "function";
 }
 
 console.log(isKeyFunction(user, "walk"));
@@ -57,7 +54,7 @@ console.log("************************************************************");
 function makeNewObject(obj) {
 	let newObj = {};
 	for (key in obj) {
-		if (typeof obj[key] == "string" && key.length == 4) {
+		if (typeof key == "string" && key.length == 4) {
 			newObj[key] = obj[key];
 		}
 	}
@@ -75,7 +72,6 @@ function makeNewObjectWithNumber(obj) {
 	let newObject = {};
 	for (key in obj) {
 		if (typeof obj[key] == "number" && obj[key] > 10 && obj[key] < 20) {
-			console.log(obj[key]);
 			newObject[key] = obj[key];
 		}
 	}
@@ -89,10 +85,7 @@ console.log("************************************************************");
 // 6. Write a function that takes in an object and a key, and returns the number of characters in the value of that key.
 
 function countCharsInValue(obj, key) {
-	if (!(key in obj)) {
-		return null;
-	}
-	if (typeof obj[key] != "string") {
+	if (!(key in obj) && (typeof obj[key] != "string")) {
 		return null;
 	}
 	return obj[key].length;
@@ -107,9 +100,9 @@ console.log("************************************************************");
 function makeNewObject2(obj, arr) {
 	let newObj = {};
 	for (key in obj) {
-		if(!arr.includes(key)){
-            newObj[key] = obj[key];
-			}
+		if (!arr.includes(key)) {
+			newObj[key] = obj[key];
+		}
 	}
 	return newObj;
 }
