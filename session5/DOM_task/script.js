@@ -8,11 +8,10 @@ input.addEventListener("change", (e) => {
 
 	for (let i = 0; i < n; i++) {
 		const box = document.createElement("div");
-		box.classList.toggle("box");
+		box.classList.add("box");
 		box.style.backgroundColor = getRandomColor();
 		wrapper.appendChild(box);
 	}
-
 });
 
 function getRandomColor() {

@@ -99,10 +99,6 @@
 	transform: rotate(-36deg);
 }
 
-.container input[type="checkbox"]:checked ~ .logo {
-	display: none;
-}
-
 .clicked {
 	display: flex;
 	padding-top: 30px;
