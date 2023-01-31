@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	/* border: 1px dashed red; */
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.container {
+	width: 70vw;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.title {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 90px;
+	color: #e3d8d8;
+}
+
+#form {
+	width: 70%;
+	margin: auto;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: space-between;
+	height: 2rem;
+}
+
+#todo-text-input {
+	width: 50%;
+}
+.button {
+	min-width: 7rem;
+	height: 2rem;
+}
+
+#todo-list {
+	display: block;
+	width: 70%;
+	margin: auto;
+	padding: 0;
+	margin-bottom: 20px;
+}
+#todo-list li {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	gap: 0.2em;
+	flex: 2;
+	margin-bottom: 5px;
+	padding: 3px;
+}
+
+.todo-item__checkbox {
+	margin-right: 5px;
+	position: relative;
+	transform: translateY(-2px) scale(1.2);
+}
+
+.todo-item--checked {
+	opacity: 0.5;
+}
+
+.todo-item__title {
+	width: 50%;
+}
+.todo-item__due {
+	width: 20%;
+}
+.todo-item__priority {
+	width: 20%;
+}
+
+.todo-item--high {
+	background-color: rgb(242, 172, 172);
+}
+
+.todo-item--medium {
+	background-color: rgb(236, 186, 128);
+}
+
+.todo-item--low {
+	background-color: rgb(182, 237, 197);
+}
+.button__add {
+	background-color: rgb(119, 213, 164);
+}
+.wrapper-buttons {
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	border: 1px solid rgb(96, 93, 93);
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.button__sort {
+	margin-right: 10px;
+	background-color: rgb(98, 146, 193);
+}
+.button:hover {
+	scale: 1.02;
+	opacity: 0.7;
+	transition: all.2s;
+}
+.button__deleteAll {
+	background-color: rgb(189, 116, 116);
+}
+
