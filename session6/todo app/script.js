@@ -38,6 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		todos.forEach((element) => {
 			const newItem = document.createElement("li");
 			newItem.classList.add("todo-item");
+			// create checkbox
 			const checkbox = document.createElement("input");
 			checkbox.type = "checkbox";
 			checkbox.name = "status";
@@ -49,19 +50,19 @@ window.addEventListener("DOMContentLoaded", () => {
 			checkbox.addEventListener("change", (e) => {
 				newItem.classList.toggle("todo-item--checked");
 			});
-
+			// create the task text
 			const text = document.createElement("p");
 			text.classList.add("todo-item__title");
 			newItem.appendChild(text);
-
+			// create the due date field
 			const dueDateText = document.createElement("div");
 			dueDateText.innerText = element.dueDate;
 			dueDateText.classList.add("todo-item__due");
 			newItem.appendChild(dueDateText);
-
+			// create the priority field
 			const prioText = document.createElement("div");
 			prioText.classList.add("todo-item__priority");
-
+			// assigning the classes to priorities
 			let className;
 			switch (element.priority) {
 				case "1":
@@ -80,13 +81,14 @@ window.addEventListener("DOMContentLoaded", () => {
 			newItem.classList.add(className);
 			newItem.appendChild(prioText);
 
+			// create delete button per each task
 			const deleteBtn = document.createElement("button");
 			deleteBtn.innerText = "delete";
 			deleteBtn.classList.add("delete-btn");
 
 			deleteBtn.addEventListener("click", () => {
 				newItem.remove();
-				todos.pop();
+				todos.splice(todos.indexOf(element),1);
 			});
 
 			newItem.appendChild(deleteBtn);
@@ -94,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			text.innerText = element.title;
 		});
 	}
-
+	// sorting by priority
 	function sortByPriority(todos) {
 		let done = false;
 		while (!done) {
@@ -115,6 +117,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		createTodoList(todos);
 	});
 
+	//delete all tasks
 	deleteAll.addEventListener("click", (e) => {
 		todos = [];
 		createTodoList(todos);
