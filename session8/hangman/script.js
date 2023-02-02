@@ -22,20 +22,15 @@ window.addEventListener("DOMContentLoaded", () => {
 		let $currentWord = $words[Math.floor(Math.random() * $words.length)];
 		$currentWord = $currentWord.toUpperCase();
 		console.log($currentWord);
-
-		//displayCodedLetters($currentWord);
-
-		// setting the number of tries at the start of the game
-
+		// pupolate the array with underscores
 		for (let i = 0; i < $currentWord.length; i++) {
 			$codeWord.push("__");
 		}
 		displayCodedLetters($codeWord);
 		displayChances();
-
+		// get the user's input (guess)
 		$form.addEventListener("submit", (e) => {
 			e.preventDefault();
-			
 			if (chances == 0) {
 				return;
 			}
@@ -60,10 +55,12 @@ window.addEventListener("DOMContentLoaded", () => {
 			$codedLetters.appendChild($codedLetter);
 		}
 	}
+	// pring the text with the number of chances left
 	function displayChances() {
 		$numTries.innerText = "You have " + chances + " tries left.";
 	}
-
+	// check if a user made a right guess and update the coded word (_ _ _)
+	//and number of chances in case of wrong guess
 	function checkLetter(value, word, code) {
 		let wrongGuess = true;
 		for (let i = 0; i < word.length; i++) {
@@ -80,8 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// restart the game
-	btn.addEventListener("click", () => {
-		location.reload();
-	});
-	window.onload = startGame();
+	btn.addEventListener("click", location.reload);
+
+	startGame();
 });
